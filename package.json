@@ -17,6 +17,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-redux": "^9.2.0",
+    "react-transition-group": "^4.4.5",
     "redux-persist": "^6.0.0",
     "tailwind-merge": "^3.3.1"
   },
