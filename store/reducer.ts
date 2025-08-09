@@ -3,9 +3,15 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import globalStatesReducer from "./modules/global/globalStateReducers";
+import gameStatesReducer from "./modules/game";
 import categoryStatesReducer from "./modules/category";
 import productStatesReducer from "./modules/product";
 
+const persistGameConfig = {
+  key: "game",
+  storage,
+  blacklist: ["current", "loading", "lastFetched"],
+};
 const persistCategoriesConfig = {
   key: "categories",
   storage,
@@ -18,6 +24,7 @@ const persistProductsConfig = {
 };
 const appReducer = combineReducers({
   global: globalStatesReducer,
+  game: persistReducer(persistGameConfig, gameStatesReducer),
   categories: persistReducer(persistCategoriesConfig, categoryStatesReducer),
   products: persistReducer(persistProductsConfig, productStatesReducer),
 });

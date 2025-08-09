@@ -1,6 +1,5 @@
 "use client";
 
-import { Product } from "@resources/types/product";
 import Products from "../Products";
 import Sidebar from "../SideBar";
 import { useDispatch, useSelector } from "@store/hooks";

@@ -25,8 +25,8 @@ const Products: React.FC<ProductsProps> = ({ products, isLoading }) => {
           ) : (
             <Paragraph
               variant={paragraphVariants.regular}
-              sx={"text-content-light-secondary"}
-              content="No products found"
+              sx={"text-content-light-secondary mx-auto my-auto"}
+              content="No products found."
             />
           )}
         </>

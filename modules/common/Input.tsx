@@ -1,6 +1,13 @@
 "use client";
 
-import React, { ChangeEvent, FocusEvent, RefObject, useEffect, useState } from "react";
+import React, {
+  ChangeEvent,
+  FocusEvent,
+  KeyboardEventHandler,
+  RefObject,
+  useEffect,
+  useState,
+} from "react";
 import { cn } from "@lib/utils/style";
 import { paragraphVariants, ParagraphVariant } from "@resources/types/variants";
 import Paragraph from "@modules/common/typography/components/Paragraph";
@@ -24,6 +31,7 @@ interface InputProps {
   onBlurHandler?: (e: FocusEvent<HTMLInputElement>) => void;
   sx?: string;
   inputSx?: string;
+  onEnter?: () => void;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -40,6 +48,7 @@ const Input: React.FC<InputProps> = ({
   paragraphVariant = paragraphVariants.regular,
   onChange,
   error,
+  onEnter,
   isDisabled = false,
   onFocusHandler = () => {},
   onBlurHandler = () => {},
@@ -61,6 +70,14 @@ const Input: React.FC<InputProps> = ({
       if (characterLimit) setCharacterCount(newVal.length);
       onChange?.(e);
     }
+  };
+
+  const handleKeyDown = (event: KeyboardEventHandler<HTMLInputElement>) => {
+    if (event.key === "Enter" && onEnter) {
+      onEnter();
+    }
+
+    return false;
   };
 
   return (
@@ -117,6 +134,7 @@ const Input: React.FC<InputProps> = ({
           onChange={onInputChangeHandler}
           placeholder={inputPlaceholder}
           disabled={isDisabled}
+          onKeyDown={handleKeyDown}
           onFocus={(e) => onFocusHandler(e)}
           onBlur={(e) => onBlurHandler(e)}
         />

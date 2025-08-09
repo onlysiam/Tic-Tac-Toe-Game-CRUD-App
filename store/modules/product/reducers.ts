@@ -87,7 +87,7 @@ const slice = createSlice({
     },
     productsFetched(state, action: PayloadAction<Product[]>) {
       state.data = action.payload;
-      state.pagination.skip = state.pagination.skip + state.pagination.limit;
+      state.pagination.skip = (state.pagination.page - 1) * state.pagination.limit;
       state.loading = false;
       state.lastFetched = Date.now();
       state.fetched = true;

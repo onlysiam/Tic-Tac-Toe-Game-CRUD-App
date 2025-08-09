@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState } from "react";
 export type PopupContextType = {
   messagePopupObj: contextRetrunObjType;
   deleteProductPopupObj: contextRetrunObjType;
+  gameResultPopup: contextRetrunObjType;
 };
 type contextRetrunObjType = {
   data: popupDataStateType;
@@ -53,6 +54,19 @@ const UsePopupContextProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setShowDeleteProductPopupState(false);
   };
 
+  //
+  //game result popup
+  const [gameResultPopupActionState, setGameResultPopupActionState] = useState<popupDataStateType>({
+    popupAction: () => {},
+  });
+  const [showGameResultPopupState, setShowGameResultPopupState] = useState<boolean>(false);
+  const openGameResultPopup = () => {
+    setShowGameResultPopupState(true);
+  };
+  const closeGameResultPopup = () => {
+    setShowGameResultPopupState(false);
+  };
+
   return (
     <UsePopupContext.Provider
       value={{
@@ -67,6 +81,12 @@ const UsePopupContextProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           show: showDeleteProductPopupState,
           open: opendDleteProductPopup,
           close: closeDeleteProductPopup,
+        },
+        gameResultPopup: {
+          action: gameResultPopupActionState,
+          show: showGameResultPopupState,
+          open: openGameResultPopup,
+          close: closeGameResultPopup,
         },
       }}
     >

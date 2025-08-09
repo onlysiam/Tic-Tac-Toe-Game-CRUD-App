@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
-import ReduxStoreProvider from "@lib/utils/providers/reduxStore";
+import Popups from "@modules/popups";
+import Providers from "@lib/utils/providers";
 
 export const metadata: Metadata = {
   title: "Tic Tac Toe Game",
@@ -10,5 +11,10 @@ export default function TicTacToeGameLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <ReduxStoreProvider>{children}</ReduxStoreProvider>;
+  return (
+    <Providers>
+      <Popups />
+      {children}
+    </Providers>
+  );
 }

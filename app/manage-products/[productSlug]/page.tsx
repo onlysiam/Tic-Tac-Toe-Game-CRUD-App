@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: ManageProductsProps): Promise
 
   const imageUrl = product.images[0];
 
-  const siteUrl = "";
+  const siteUrl = "https://tic-tac-toe-game-crud-app.vercel.app";
   const canonical = `${siteUrl}/manage-products/${productSlug}`;
 
   return {

@@ -20,9 +20,17 @@ export function useSetProductsData(): {
   const [prevCategory, setPrevCategory] = useState<Category | null>(null);
 
   useEffect(() => {
+    console.log(
+      !products.loading,
+      !products.data?.length,
+      products.pagination.skip !== (currentPage - 1) * fetchLimits.default,
+      prevCategory?.id !== currentCategory?.id
+    );
+
     if (
       !products.loading &&
-      (!products.data?.length ||
+      (currentPage === 1 ||
+        !products.data?.length ||
         products.pagination.skip !== (currentPage - 1) * fetchLimits.default ||
         prevCategory?.id !== currentCategory?.id)
     ) {

@@ -79,7 +79,7 @@ const Categories: React.FC<CategoriesProps> = ({ selectedCategory, onCategorySel
               <Paragraph
                 variant={paragraphVariants.regular}
                 sx={"text-content-light-secondary"}
-                content="No categories found"
+                content="No categories found px-4"
               />
             )}
           </>
