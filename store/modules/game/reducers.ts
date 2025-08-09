@@ -94,6 +94,9 @@ const slice = createSlice({
       state.pendingPlayerName.first = null;
       state.pendingPlayerName.second = null;
     },
+    resetLeaderboard: (state) => {
+      state.data = [];
+    },
   },
 });
 

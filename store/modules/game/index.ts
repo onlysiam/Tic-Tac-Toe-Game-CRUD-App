@@ -8,5 +8,6 @@ export const {
   resetCurrentBoard,
   setLeaderboardData,
   resetAll,
+  resetLeaderboard,
 } = gameStates.actions;
 export default gameStates.reducer;

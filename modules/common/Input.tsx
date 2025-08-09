@@ -72,7 +72,7 @@ const Input: React.FC<InputProps> = ({
     }
   };
 
-  const handleKeyDown = (event: KeyboardEventHandler<HTMLInputElement>) => {
+  const handleKeyDown = (event: any) => {
     if (event.key === "Enter" && onEnter) {
       onEnter();
     }
