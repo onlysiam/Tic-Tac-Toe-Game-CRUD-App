@@ -14,6 +14,7 @@ import Link from "next/link";
 import { pagePaths } from "@resources/paths";
 import Modal from "@modules/modal/modal";
 import { usePopup } from "@contexts/UsePopup";
+import images from "@resources/images";
 
 const ProductCard = ({ product }: { product: Product }) => {
   const { deleteProductPopupObj } = usePopup();
@@ -56,6 +57,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         className="shrink-0 h-[150px] w-full sm:w-[200px] rounded-[10px] object-cover"
         src={product.images[0]}
         alt={product.title}
+        onErrorImage={images.placeholders.image}
       />
       <div className="flex flex-col gap-[10px] py-2 w-full">
         <Heading variant={headingVariants.cardHeading} sx="font-semibold">
