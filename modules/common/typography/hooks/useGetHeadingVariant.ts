@@ -33,14 +33,14 @@ const useGetHeadingVariant = ({ variant, sx }: { variant: HeadingVariant; sx: st
       ),
       Element: "h2",
     },
-    [headingVariants.cardHeading]: {
+    [headingVariants.title]: {
       componentStyle: cn(
         "text-[24px] leading-[1em] md:text-[28px] lg:text-card-heading my-0 [&>span]:text-primary text-content-dark capitalize",
         sx
       ),
       Element: "h3",
     },
-    [headingVariants.title]: {
+    [headingVariants.cardHeading]: {
       componentStyle: cn(
         "text-[22px] leading-[1em] md:text-title my-0 [&>span]:text-primary text-content-dark capitalize",
         sx

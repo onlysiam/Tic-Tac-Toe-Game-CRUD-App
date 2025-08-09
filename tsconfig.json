@@ -20,6 +20,8 @@
     ],
     "paths": {
       "@contexts/*": ["./contexts/*"],
+      "@configs/*": ["./configs/*"],
+      "@hooks/*": ["./hooks/*"],
       "@resources/*": ["./resources/*"],
       "@lib/*": ["./lib/*"],
       "@modules/*": ["./modules/*"],

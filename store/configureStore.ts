@@ -29,7 +29,7 @@ const persistConfig: PersistConfig<RootState> = {
   debug: true,
   stateReconciler: autoMergeLevel2,
   migrate: createMigrate(migrations, { debug: true }),
-  blacklist: [],
+  blacklist: ["global", "categories", "products"],
 };
 
 interface ApiCallPayload {

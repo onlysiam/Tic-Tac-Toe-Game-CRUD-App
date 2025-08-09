@@ -1,0 +1,74 @@
+[
+  {
+    "id": 32,
+    "name": "Clothes",
+    "slug": "clothes",
+    "image": "https://i.imgur.com/QkIa5tT.jpeg",
+    "creationAt": "2025-08-07T12:13:25.000Z",
+    "updatedAt": "2025-08-07T12:13:25.000Z"
+  },
+  {
+    "id": 33,
+    "name": "Electronics",
+    "slug": "electronics",
+    "image": "https://i.imgur.com/ZANVnHE.jpeg",
+    "creationAt": "2025-08-07T12:13:26.000Z",
+    "updatedAt": "2025-08-07T12:13:26.000Z"
+  },
+  {
+    "id": 34,
+    "name": "Furniture",
+    "slug": "furniture",
+    "image": "https://i.imgur.com/Qphac99.jpeg",
+    "creationAt": "2025-08-07T12:13:26.000Z",
+    "updatedAt": "2025-08-07T12:13:26.000Z"
+  },
+  {
+    "id": 35,
+    "name": "Shoes",
+    "slug": "shoes",
+    "image": "https://i.imgur.com/qNOjJje.jpeg",
+    "creationAt": "2025-08-07T12:13:27.000Z",
+    "updatedAt": "2025-08-07T12:13:27.000Z"
+  },
+  {
+    "id": 36,
+    "name": "Miscellaneous",
+    "slug": "miscellaneous",
+    "image": "https://i.imgur.com/BG8J0Fj.jpg",
+    "creationAt": "2025-08-07T12:13:28.000Z",
+    "updatedAt": "2025-08-07T12:13:28.000Z"
+  },
+  {
+    "id": 37,
+    "name": "dd-cat-tests",
+    "slug": "dd-cat-tests",
+    "image": "https://www.pinterest.com/pin/crunchy-cat-luna-in-2023--583075483029894957",
+    "creationAt": "2025-08-07T12:26:41.000Z",
+    "updatedAt": "2025-08-07T12:26:41.000Z"
+  },
+  {
+    "id": 38,
+    "name": "Testing Category",
+    "slug": "testing-category",
+    "image": "https://placeimg.com/640/480/any",
+    "creationAt": "2025-08-07T13:01:00.000Z",
+    "updatedAt": "2025-08-07T13:01:00.000Z"
+  },
+  {
+    "id": 39,
+    "name": "Test New Category",
+    "slug": "test-new-category",
+    "image": "https://placeimg.com/640/480/any",
+    "creationAt": "2025-08-07T13:23:15.000Z",
+    "updatedAt": "2025-08-07T13:23:15.000Z"
+  },
+  {
+    "id": 40,
+    "name": "Si",
+    "slug": "si",
+    "image": "https://placeimg.com/640/480/any",
+    "creationAt": "2025-08-07T13:41:55.000Z",
+    "updatedAt": "2025-08-07T13:41:55.000Z"
+  }
+]

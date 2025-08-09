@@ -10,8 +10,8 @@ export const headingVariants = {
   heading: "heading", // h1 48px
   sectionHeading: "section-heading", // h2 48px
   titleLg: "title-lg", // h2 36px
-  cardHeading: "card-heading", // h3 30px
-  title: "title", // h3 24px
+  title: "title", // h3 30px
+  cardHeading: "card-heading", // h3 24px
 };
 
 export type ParagraphVariant = (typeof paragraphVariants)[keyof typeof paragraphVariants]; //'title' || 'title-xlg' || ....

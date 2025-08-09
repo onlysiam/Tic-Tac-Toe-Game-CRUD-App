@@ -36,8 +36,8 @@
   --color-border-dark: #22252a;
 
   /* Primary and action colors */
-  --color-action: #;
-  --color-action-secondary: #;
+  --color-action: #0000ff;
+  --color-action-secondary: #ffff00;
   --color-action-25: #;
   --color-action-50: #;
   --color-action-100: #;
@@ -179,7 +179,6 @@ a {
 
 @keyframes skeleton-loading {
   0% {
-    background-color: #f0f0f0;
     opacity: 0.2;
   }
 

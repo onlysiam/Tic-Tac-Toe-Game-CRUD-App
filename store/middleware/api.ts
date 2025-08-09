@@ -1,7 +1,7 @@
 import { Middleware } from "@reduxjs/toolkit";
 import * as actions from "@store/resources/apiActionTypes";
 import { axiosRequest } from "@lib/api/axios";
-import { dispatchErrorToasts } from "../utils/dispatchers/toast";
+import { dispatchErrorToasts, dispatchSuccessToasts } from "../utils/dispatchers/toast";
 import type { AxiosRequestPayload } from "@lib/api/axios";
 
 interface ApiCallPayload extends AxiosRequestPayload {
@@ -36,13 +36,15 @@ const api: Middleware =
 
     try {
       const response = await axiosRequest(typedAction.payload);
-      dispatch(actions.apiCallSuccess(response.data));
+
+      dispatch(actions.apiCallSuccess(response));
 
       if (onSuccess) {
-        dispatch({ type: onSuccess, payload: response.data });
+        dispatch({ type: onSuccess, payload: response });
+        dispatchSuccessToasts({ dispatch, payload: response, onSuccess });
       }
     } catch (error: any) {
-      dispatchErrorToasts({ dispatch, payload: error });
+      dispatchErrorToasts({ dispatch, payload: error, onError });
       const errorPayload = {
         error: error?.message,
         systemError: error.response?.data,

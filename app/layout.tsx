@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "@styles/global.css";
-import ReduxStoreProvider from "@lib/utils/providers/reduxStore";
+import "@styles/globals.css";
+import "@public/iconfonts/style.css";
 import DefaultLayout from "@modules/layouts/Default";
 import Navbar from "@modules/layouts/Navbar";
+import Sidebar from "@modules/product/components/SideBar";
 
 export const metadata: Metadata = {
   title: "React Developer Assignment",
@@ -16,12 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ReduxStoreProvider>
-          <Navbar />
-          <main className="min-h-screen bg-bkg-light-secondary">
-            <DefaultLayout>{children}</DefaultLayout>
-          </main>
-        </ReduxStoreProvider>
+        <Navbar />
+        <main className="flex min-h-screen bg-bkg-light-secondary overflow-hidden pt-[70px]">
+          <DefaultLayout>{children}</DefaultLayout>
+        </main>
       </body>
     </html>
   );

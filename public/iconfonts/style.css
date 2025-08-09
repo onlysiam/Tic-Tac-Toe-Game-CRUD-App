@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'Icons';
+  src:  url('fonts/Icons.eot?20xnm7');
+  src:  url('fonts/Icons.eot?20xnm7#iefix') format('embedded-opentype'),
+    url('fonts/Icons.ttf?20xnm7') format('truetype'),
+    url('fonts/Icons.woff?20xnm7') format('woff'),
+    url('fonts/Icons.svg?20xnm7#Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ic-"], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-arrow-down:before {
+  content: "\ea3e";
+}
+.ic-arrow-up:before {
+  content: "\ea3d";
+}
+.ic-arrow-right:before {
+  content: "\ea3b";
+}
+.ic-arrow-left:before {
+  content: "\ea3c";
+}
+.ic-arrow-down1:before {
+  content: "\ea3f";
+}
+.ic-arrow-up1:before {
+  content: "\ea40";
+}
+.ic-arrow-right1:before {
+  content: "\ea41";
+}
+.ic-arrow-left1:before {
+  content: "\ea42";
+}
+.ic-options:before {
+  content: "\e910";
+}
+.ic-edit:before {
+  content: "\e905";
+}
+.ic-arrow-up-thin:before {
+  content: "\e927";
+}
+.ic-arrow-down-thin:before {
+  content: "\e928";
+}
+.ic-arrow-right-thin:before {
+  content: "\e925";
+}
+.ic-arrow-left-thin:before {
+  content: "\e926";
+}
+.ic-trash:before {
+  content: "\e921";
+}
+.ic-taka:before {
+  content: "\e906";
+}
+.ic-versus:before {
+  content: "\e904";
+}
+.ic-check-smooth:before {
+  content: "\e950";
+}
+.ic-tic-tac-toe:before {
+  content: "\e902";
+}
+.ic-product-management:before {
+  content: "\e903";
+}
+.ic-person:before {
+  content: "\e900";
+}
+.ic-rank:before {
+  content: "\e901";
+}
+.ic-cross:before {
+  content: "\e92e";
+}
+.ic-search:before {
+  content: "\e90d";
+}

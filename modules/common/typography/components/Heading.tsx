@@ -1,6 +1,7 @@
 import React from "react";
-import useGetHeadingVariant from "@modules/common/hooks/variants/useGetHeadingVariant";
-import { headingVariants } from "@resources/variants";
+
+import useGetHeadingVariant from "@modules/common/typography/hooks/useGetHeadingVariant";
+import { headingVariants } from "@resources/types/variants";
 
 interface HeadingProps {
   variant?: (typeof headingVariants)[keyof typeof headingVariants];

@@ -13,7 +13,7 @@ interface CommonProps {
   icon?: string;
   paragraphVariant?: ParagraphVariant;
   sx?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -26,13 +26,13 @@ interface ActionButtonProps extends CommonProps, LoadingProps {
 }
 
 const ActionButton: React.FC<ActionButtonProps> = ({
-  buttonType = buttonTypes.dark,
+  buttonType = buttonTypes.light,
   href,
   paragraphVariant = paragraphVariants.regular,
   label,
   icon,
   isLoading,
-  disabled,
+  isDisabled,
   sx,
   onClick,
 }) => {
@@ -46,7 +46,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
         icon={icon}
         onClick={onClick}
         isLoading={isLoading}
-        disabled={disabled}
+        isDisabled={isDisabled}
         sx={sx}
       />
     );
@@ -58,7 +58,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
         label={label}
         icon={icon}
         onClick={onClick}
-        disabled={disabled}
+        isDisabled={isDisabled}
         sx={sx}
       />
     );
@@ -81,16 +81,14 @@ const Button: React.FC<ButtonProps> = ({
   icon,
   onClick,
   isLoading,
-  disabled,
+  isDisabled,
   sx,
 }) => {
-  const isDisabled = disabled || isLoading;
-
   const content = (
     <>
       {icon && !isLoading && (
         <i
-          className={cn(`bhr-${icon}`, "text-[20px] duration-150", {
+          className={cn(`ic-${icon}`, "text-[20px] duration-150", {
             "text-content-light": buttonType === buttonTypes.dark,
             "text-content-dark-secondary": buttonType === buttonTypes.light,
           })}
@@ -119,12 +117,12 @@ const Button: React.FC<ButtonProps> = ({
               buttonType === buttonTypes.light,
             "h-[45px]": paragraphVariant === paragraphVariants.regular,
             "h-[40px]": paragraphVariant === paragraphVariants.meta,
-            "bg-bkg-disabled [&>i]:text-content-dark/40 [&>p]:text-content-dark/40 cursor-default hover:bg-bkg-disabled inset-shadow-none drop-shadow-none":
-              isDisabled,
+            "!bg-bkg-disabled [&>i]:text-content-dark/40 [&>p]:text-content-dark/40 cursor-default hover:bg-bkg-disabled inset-shadow-none drop-shadow-none":
+              isDisabled || isLoading,
           },
           sx
         )}
-        href={isDisabled ? "#" : href}
+        href={isDisabled || isLoading ? "#" : href}
       >
         {content}
       </Link>
@@ -142,16 +140,16 @@ const Button: React.FC<ButtonProps> = ({
             buttonType === buttonTypes.light,
           "h-[45px]": paragraphVariant === paragraphVariants.regular,
           "h-[40px]": paragraphVariant === paragraphVariants.meta,
-          "bg-bkg-disabled/20 text-content-dark/40 [&>p]:text-content-dark/40 inset-shadow-none drop-shadow-none":
-            isDisabled,
+          "!bg-bkg-disabled/20 text-content-dark/40 [&>p]:text-content-dark/40 inset-shadow-none drop-shadow-none":
+            isDisabled || isLoading,
         },
         sx
       )}
       onClick={(e) => {
         e.preventDefault();
-        if (!isDisabled && onClick) onClick(e);
+        if (!isDisabled && !isLoading && onClick) onClick(e);
       }}
-      disabled={isDisabled}
+      disabled={isDisabled || isLoading}
     >
       {content}
     </button>
@@ -166,17 +164,17 @@ const TextButton: React.FC<TextButtonProps> = ({
   paragraphVariant = paragraphVariants.regular,
   icon,
   onClick,
-  disabled,
+  isDisabled,
   sx,
 }) => {
   const commonClasses = cn(
     "flex w-full items-center gap-[5px] duration-150 group rounded",
-    disabled ? "[&>p,i]:text-content-dark/30" : "cursor-pointer",
+    isDisabled ? "[&>p,i]:text-content-dark/30" : "cursor-pointer",
     sx
   );
 
-  const iconClasses = cn(`bhr-${icon}`, "text-content-dark text-[17px] duration-150", {
-    "group-hover:translate-x-[3px] group-hover:text-action": !disabled,
+  const iconClasses = cn(`ic-${icon}`, "text-content-dark-secondary text-[17px] duration-150", {
+    "group-hover:translate-x-[3px] group-hover:text-action": !isDisabled,
   });
 
   const labelNode = label && (
@@ -189,7 +187,7 @@ const TextButton: React.FC<TextButtonProps> = ({
 
   if (href) {
     return (
-      <Link className={commonClasses} href={disabled ? "#" : href}>
+      <Link className={commonClasses} href={isDisabled ? "#" : href}>
         {icon && <i className={iconClasses} />}
         {labelNode}
       </Link>
@@ -200,9 +198,9 @@ const TextButton: React.FC<TextButtonProps> = ({
     <button
       className={commonClasses}
       onClick={(e) => {
-        if (!disabled && onClick) onClick(e);
+        if (!isDisabled && onClick) onClick(e);
       }}
-      disabled={disabled}
+      disabled={isDisabled}
     >
       {icon && <i className={iconClasses} />}
       {labelNode}

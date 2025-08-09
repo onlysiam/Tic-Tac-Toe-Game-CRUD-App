@@ -1,5 +1,5 @@
-import useGetParagraphVariant from "@modules/common/hooks/variants/useGetParagraphVariant";
-import { paragraphVariants } from "@resources/variants";
+import useGetParagraphVariant from "@modules/common/typography/hooks/useGetParagraphVariant";
+import { paragraphVariants } from "@resources/types/variants";
 import { forwardRef } from "react";
 
 interface ParagraphProps {
