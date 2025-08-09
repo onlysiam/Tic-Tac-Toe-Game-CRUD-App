@@ -26,7 +26,7 @@ const TicTacToeClientPage = () => {
         Tic Tac Toe
       </Heading>
 
-      <div className="flex items-center justify-center gap-5">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
         <PlayerInputForm
           heading="Player 1"
           value={gameStates.pendingPlayerName.first}
@@ -62,7 +62,7 @@ const TicTacToeClientPage = () => {
       {gameStates.current && (
         <ActionButton
           label="Start"
-          sx="max-w-[300px]"
+          sx="sm:max-w-[300px]"
           onClick={() => {
             dispatch(startGame());
           }}
